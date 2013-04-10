@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int n = 1;
+}
+
+
+@model TodoList.Models.TodoListViewModel
+
+
+<!-- Button to trigger modal -->
+<a href="#myModal" role="button" class="btn pull-right" data-toggle="modal">Add</a>
+ 
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">TODO List item</h3>
+    </div>
+     @using(Html.BeginForm("Save", "Home"))
+     {
+         
+        
+        <div class="modal-body">
+        
+            <fieldset>
+                @Html.TextBox("Title", Model.AddForm.Title)
+                <span class="help-block">text</span>
+                @Html.TextArea("Text", Model.AddForm.Text, new { rows = "3" })
+            </fieldset>
+       
+        </div>
+    <div class="modal-footer">
+        <input type="submit" class="btn btn-primary" value="Save"/>
+    </div>
+    }
+</div>
+
+
+<table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Title</th>
+                    <th>Text</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+              </thead>
+    <tbody>
+        
+        @foreach (var item in Model.Todos)
+        {
+            <tr>
+                <td>@(n++)</td>
+                <td>@item.Title</td>
+                <td>@item.Text</td>
+                <td>
+                    @using(Html.BeginForm("Delete", "Home", new { id = item.Id}))
+                    {
+                        <input type="submit" class="btn btn-mini" value="delete"/>
+                    }
+                    </td>
+                    <td>
+                    @Html.ActionLink("edit", "Edit", "Home", new { id = item.Id }, new { @class = "btn btn-mini" })
+                    </td>
+            </tr>
+        }
+        
+    </tbody>
+            </table>

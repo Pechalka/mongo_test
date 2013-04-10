@@ -1,0 +1,11 @@
+C:\Work\TodoList\TodoList\bin\TodoList.dll
+C:\Work\TodoList\TodoList\bin\TodoList.pdb
+C:\Work\TodoList\TodoList\bin\EntityFramework.dll
+C:\Work\TodoList\TodoList\bin\EntityFramework.xml
+C:\Work\TodoList\TodoList\obj\Debug\ResolveAssemblyReference.cache
+C:\Work\TodoList\TodoList\obj\Debug\TodoList.dll
+C:\Work\TodoList\TodoList\obj\Debug\TodoList.pdb
+C:\Work\TodoList\TodoList\bin\MongoDB.Bson.dll
+C:\Work\TodoList\TodoList\bin\MongoDB.Driver.dll
+C:\Work\TodoList\TodoList\bin\MongoDB.Bson.xml
+C:\Work\TodoList\TodoList\bin\MongoDB.Driver.xml

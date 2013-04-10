@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+@model TodoList.Models.Todo
+
+
+    @using (Html.BeginForm("Edit", "Home"))
+    {
+    <fieldset>
+        
+        @Html.TextBox("Title", Model.Title)
+        @Html.Hidden("id", Model.Id)
+        <span class="help-block">text</span>
+        @Html.TextArea("Text", Model.Text, new { rows = "3" })
+    </fieldset>
+    <input type="submit" class="btn btn-primary" value="Save"/>
+    @Html.ActionLink("Go to list", "Index", "Home", null, new { @class = "btn" })
+    
+    }
